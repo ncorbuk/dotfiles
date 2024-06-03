@@ -474,6 +474,10 @@ vnoremap K :m '<-2<CR>gv=gv
 "" Open current line on GitHub
 nnoremap <Leader>o :.GBrowse<CR>
 
+"" auto brackets
+inoremap [ []<left>
+inoremap { {}<left>
+
 "*****************************************************************************
 "" Custom configs
 "*****************************************************************************
@@ -553,12 +557,12 @@ augroup END
 
 " python
 " vim-python
-augroup vimrc-python
-  autocmd!
-  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
-      \ formatoptions+=croq softtabstop=4
-      \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-augroup END
+"augroup vimrc-python
+""  autocmd!
+""  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
+""      \ formatoptions+=croq softtabstop=4
+""      \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+"augroup END
 
 " jedi-vim
 let g:jedi#popup_on_dot = 0
@@ -639,3 +643,7 @@ else
   let g:airline_symbols.linenr = ''
 endif
 
+
+inoremap {<CR> {<CR>}<C-o>O<Tab>
+
+"This is latest vimrc v0.1
